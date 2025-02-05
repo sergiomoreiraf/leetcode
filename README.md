@@ -1,1 +1,1 @@
-Leetcode problems using Deno2
+Leetcode using Deno2
