@@ -1,5 +1,6 @@
 import { assertEquals } from '@std/assert/equals';
-import { ListNode, middleNode } from './main.ts';
+import { middleNode } from './main.ts';
+import { ListNode } from '../../algorithms/list_node.ts';
 
 const list_1q = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
 const list_1a = new ListNode(3, new ListNode(4, new ListNode(5)));

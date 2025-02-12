@@ -10,6 +10,8 @@
  * }
  */
 
+import { ListNode } from '../../algorithms/list_node.ts';
+
 export function middleNode(head: ListNode | null): ListNode | null {
   let pont1 = head;
   let retorno = head;
@@ -22,13 +24,4 @@ export function middleNode(head: ListNode | null): ListNode | null {
     }
   }
   return retorno;
-}
-
-export class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
 }
