@@ -17,9 +17,25 @@ This file contains instructions and conventions to follow when generating or mod
 - Directory naming convention: `{problem-number}.{ProblemName}`
 - Each problem directory should contain:
   - Implementation file (main.go, main.ts, etc.)
-  - Test file (main_test.go, etc.)
+  - Test file (main_test.go, main.test.ts, etc.)
+  - readme.md containing the description of the problem
 
 ## Testing
 
 - All code should have associated tests
-- Go tests should use the standard testing package
+- Go tests MUST use the testify package for assertions (github.com/stretchr/testify/assert)
+- TypeScript implementations MUST include a test file (main.test.ts) for Deno with the following format:
+
+  - Import the implementation using relative path with .ts extension
+  - Import assert functions from "@std/assert" modules
+  - Use Deno.test() function for individual test cases
+  - Example:
+
+    ```typescript
+    import { myFunction } from "./main.ts";
+    import { assertEquals } from "@std/assert/equals";
+
+    Deno.test("test case description", () => {
+      assertEquals(myFunction(input), expected);
+    });
+    ```
